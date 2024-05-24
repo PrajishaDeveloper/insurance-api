@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "450405eb-3d6c-4f9f-a051-5eec68223662",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "35111959"
+	},
+	"item": [
+		{
+			"name": "csv upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1ef18325-a5a1-4820-ad13-0418ff374af5"
+						}
+					]
+				},
+				"url": "http://localhost:6000/upload"
+			},
+			"response": []
+		},
+		{
+			"name": "find policies with name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6000/policies/?name=Lura Lucca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"policies",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Lura Lucca"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aggregate policies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:6000/aggregate/policies"
+			},
+			"response": []
+		},
+		{
+			"name": "schedule message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"message\": \"This is a scheduled message\",\r\n  \"day\": \"2024-05-25\",\r\n  \"time\": \"15:30:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:6000/schedule-message"
+			},
+			"response": []
+		}
+	]
+}
